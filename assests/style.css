@@ -1,0 +1,32 @@
+body{
+    text-align: center;
+    background-image:url(../clouds.jpg);
+    background-repeat:no-repeat;
+    background-size: auto;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+}
+.center {
+    text-align: center;
+    font-size: 15px;
+    font-style: bold;
+    font-family: cursive;
+}
+.container {
+    font-size: 18px;
+    font-weight: 20px;
+    font-style: bold;
+    margin: 20px;
+}
+
+h2{
+    font-family: cursive;
+}
+
+h1{
+    background-image: url(../weather\ image.gif);
+    background-repeat:no-repeat;
+    background-size: 50px;
+    background-position: 54rem;
+    padding-bottom: 12px;
+}
