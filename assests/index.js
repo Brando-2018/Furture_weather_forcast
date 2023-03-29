@@ -21,14 +21,14 @@ weatherForm.addEventListener("submit", event => {
   recentlysearched = recentlysearched.slice(0, 5);
   displayrecentlysearched();
 
-  const weatherUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`;
-  const forecastUrl = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}`;
+  const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`;
+  const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}`;
 
   Promise.all([fetch(weatherUrl), fetch(forecastUrl)])
     .then(responses => Promise.all(responses.map(response => response.json())))
     .then(([weatherInfo, forecastData]) => {
       const date = new Date();
-      const iconUrl = `http://openweathermap.org/img/wn/${weatherInfo.weather[0].icon}@2x.png`;
+      const iconUrl = `https://openweathermap.org/img/wn/${weatherInfo.weather[0].icon}@2x.png`;
       const temperature = weatherInfo.main.temp;
       const humidity = weatherInfo.main.humidity;
       const windSpeed = weatherInfo.wind.speed;
@@ -44,7 +44,7 @@ weatherForm.addEventListener("submit", event => {
       for (let i = 0; i < forecastData.list.length; i++) {
         if (forecastData.list[i].dt_txt.includes("12:00:00")) {
           const forecastDate = new Date(forecastData.list[i].dt * 1000);
-          const forecastIconUrl = `http://openweathermap.org/img/wn/${forecastData.list[i].weather[0].icon}@2x.png`;
+          const forecastIconUrl = `https://openweathermap.org/img/wn/${forecastData.list[i].weather[0].icon}@2x.png`;
           const forecastTemperature = forecastData.list[i].main.temp;
           const forecastHumidity = forecastData.list[i].main.humidity;
           forecastReport += `
